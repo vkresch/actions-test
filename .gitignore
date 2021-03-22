@@ -1,0 +1,6 @@
+# File extensions
+*.pyc
+
+# Folder
+__pycache__/
+venv/
