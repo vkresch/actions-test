@@ -21,18 +21,17 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install documentation deployment dependencies
-      run: |
-        pip install -U sphinx
-        pip install sphinx_rtd_theme
-        pip install sphinxcontrib.spelling
-        pip install --upgrade recommonmark
-
     - name: Build documentation
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: docs/
-        pre-build-command: mkdir -p docs/build/ && touch docs/build/.nojekyll
+        pre-build-command: |
+          mkdir -p docs/build/
+          touch docs/build/.nojekyll
+          pip install sphinx_rtd_theme
+          pip install sphinxcontrib.spelling
+          pip install --upgrade recommonmark
+
         build-command: sphinx-build -b html . build
 
     - name: Deploy documentation
