@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         runs-on: [ubuntu-latest]
-        python-version: [3.6, 3.7, 3.8, 3.9, 3.10-dev]
+        python-version: [3.6, 3.7, 3.8, 3.9]
 
     name: "🐍 ${{ matrix.python-version  }} • ${{ matrix.runs-on }}"
     runs-on: ${{ matrix.runs-on }}
@@ -102,5 +102,12 @@ jobs:
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: docs/
-        pre-build-command: mkdir -p docs/build/ && touch docs/build/.nojekyll
+        pre-build-command: |
+          mkdir -p docs/build/
+          touch docs/build/.nojekyll
+          pip install -U sphinx
+          pip install sphinx_rtd_theme
+          pip install sphinxcontrib.spelling
+          pip install --upgrade recommonmark
+
         build-command: sphinx-build -b html . build
