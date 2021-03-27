@@ -1,4 +1,4 @@
-Tezos Reward Distributor (TRD) |Build Status|
+Tezos Reward Distributor (TRD) |Build Status| |Docs Status| |Stable Documentation Status|
 ======================================================
 
 DISCLAIMER : TEZOS REWARD DISTRIBUTOR IS PROVIDED AS IS. IT IS UNDER CONSTANT DEVELOPMENT. EVENT THOUGH IT IS WELL TESTED, PLEASE USE IT WITH CARE. ALWAYS MAKE A PRE-RUN IN DRY MODE BEFORE MAKING ACTUAL PAYMENTS. IF YOU WANT TO RUN IN SERVICE MODE DO IT AFTER YOU ARE CONFIDENT WITH THE APPLICATION. IN SERVICE MODE ONLY UPDATE IF NEEDED.
@@ -75,6 +75,8 @@ TRD Art Work
 This Github Repo_ contains logo images. If you are using TRD and want to let everybody know about it, feel free to place them in your website.
 
 .. |Build Status| image:: https://github.com/vkresch/actions-test/workflows/CI/badge.svg
+   :target: https://github.com/vkresch/actions-test/actions
+.. |Docs Status| image:: https://github.com/vkresch/actions-test/workflows/Docs/badge.svg
    :target: https://github.com/vkresch/actions-test/actions
 .. _Repo: https://github.com/vkresch/trd-art
 .. |Stable Documentation Status| image:: https://img.shields.io/badge/docs-stable-blue.svg
