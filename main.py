@@ -11,5 +11,6 @@ def important_function():
 if __name__ == "__main__":
     print("This is a new feature which is awesome!")
     print("Another new feature implemented!")
+    print("Something new")
     hello_list = important_function()
     print(hello_list)
