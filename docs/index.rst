@@ -74,7 +74,7 @@ TRD Art Work
 
 This Github Repo_ contains logo images. If you are using TRD and want to let everybody know about it, feel free to place them in your website.
 
-.. |Build Status| image:: https://github.com/vkresch/actions-test/workflows/ci/badge.svg
+.. |Build Status| image:: https://github.com/vkresch/actions-test/workflows/CI/badge.svg
    :target: https://github.com/vkresch/actions-test/actions
 .. _Repo: https://github.com/vkresch/trd-art
 .. |Stable Documentation Status| image:: https://img.shields.io/badge/docs-stable-blue.svg
