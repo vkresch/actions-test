@@ -9,5 +9,6 @@ def important_function():
 
 
 if __name__ == "__main__":
+    print("This is a new feature!")
     hello_list = important_function()
     print(hello_list)
