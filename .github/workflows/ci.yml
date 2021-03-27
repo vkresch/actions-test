@@ -1,0 +1,106 @@
+name: Tezos Reward Distributor CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+      - v*
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8]
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install linter dependencies
+      run: |
+        pip install flake8
+        pip install black
+
+    - name: Lint with black 
+      run: |
+        # Check with black
+        black --check main.py
+
+    - name: Lint with flake8 
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        runs-on: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.6, 3.7, 3.8, 3.9, 3.10-dev]
+
+    name: "🐍 ${{ matrix.python }} • ${{ matrix.runs-on }}"
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install software dependencies
+      run: |
+        python -m pip install --upgrade pip
+        sudo apt-get update -y
+        sudo apt-get install libenchant1c2a -y
+        pip install -r requirements.txt
+        pip install parameterized
+
+    - name: Test with pytest
+      run: |
+        pytest
+
+    - name: Run main
+      run: |
+        python main.py
+
+
+  sphinx-build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8]
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install documentation deployment dependencies
+      run: |
+        pip install sphinx_rtd_theme
+        pip install sphinxcontrib.spelling
+        pip install --upgrade recommonmark
+
+    - name: Build documentation
+      uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: docs/
+        pre-build-command: mkdir -p docs/build/ && touch docs/build/.nojekyll
+        build-command: sphinx-build -b html . build

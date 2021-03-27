@@ -1,12 +1,14 @@
 name: Tezos Reward Distributor Documentation
 
-on: 
+on:
+  workflow_dispatch:
   push:
     branches:
       - main
+      - v*
 
 jobs:
-  deploy:
+  deploy-documentation:
 
     runs-on: ubuntu-latest
 
