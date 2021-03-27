@@ -93,6 +93,7 @@ jobs:
 
     - name: Install documentation deployment dependencies
       run: |
+        pip install -U sphinx
         pip install sphinx_rtd_theme
         pip install sphinxcontrib.spelling
         pip install --upgrade recommonmark
