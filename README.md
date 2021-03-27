@@ -2,7 +2,9 @@
 
 Run & Forget
 
-[![Actions Status](https://github.com/vkresch/actions-test/workflows/actions/badge.svg)](https://github.com/vkresch/actions-test/actions)
+[![Actions Status](https://github.com/vkresch/actions-test/workflows/ci/badge.svg)](https://github.com/vkresch/actions-test/actions)
+
+[![Documentation Status](https://github.com/vkresch/actions-test/workflows/docs/badge.svg)](https://github.com/vkresch/actions-test/actions)
 
 This repo is soley for testing and playing around with Github Actions.
 
