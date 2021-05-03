@@ -76,13 +76,13 @@ TRD Art Work
 
 This Github Repo_ contains logo images. If you are using TRD and want to let everybody know about it, feel free to place them in your website.
 
-.. |Build Status| image:: https://github.com/vkresch/actions-test/workflows/CI/badge.svg
-   :target: https://github.com/vkresch/actions-test/actions
-.. |Docs Status| image:: https://github.com/vkresch/actions-test/workflows/Docs/badge.svg
-   :target: https://github.com/vkresch/actions-test/actions
-.. _Repo: https://github.com/vkresch/trd-art
+.. |Build Status| image:: https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/workflows/CI/badge.svg
+   :target: https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/actions
+.. |Docs Status| image:: https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/workflows/Docs/badge.svg
+   :target: https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/actions
+.. _Repo: https://github.com/tezos-reward-distributor-organization/trd-art
 .. |Stable Documentation Status| image:: https://img.shields.io/badge/docs-stable-blue.svg
-   :target: https://vkresch.github.io/actions-test/
+   :target: https://tezos-reward-distributor-organization.github.io/tezos-reward-distributor/
 
 .. toctree::
    :maxdepth: 2
@@ -96,6 +96,8 @@ This Github Repo_ contains logo images. If you are using TRD and want to let eve
    run
    plugins
    linuxservice
+   state_machine
    contributors
+   testing
    statistics
    codeofconduct
